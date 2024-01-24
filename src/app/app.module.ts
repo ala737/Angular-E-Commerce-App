@@ -4,15 +4,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { AllProductsComponent } from './products/components/all-products/all-products.component';
+import { ProductsModule } from './products/products.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
-    BrowserModule,
+   
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule,
+    CommonModule,
+    ProductsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

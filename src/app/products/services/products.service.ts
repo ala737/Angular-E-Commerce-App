@@ -23,11 +23,23 @@ import { environment } from 'src/env/environment';
   providedIn: 'root',
 })
 export class ProductsService {
- // private apiUrl = 'https://fakestoreapi.com/products';
+
+ 
+ 
 
   constructor(private http: HttpClient) {}
 
   getAllProducts(): Observable<any> {
-    return this.http.get(environment.baseApi +"prod");
+    return this.http.get(environment.baseApi +"products");
   }
+
+  getcategoriesService(){
+     return this.http.get(environment.baseApi +'products/categories');
+  }
+
+  getProductsByCategory(keyword:String){
+    return this.http.get(environment.baseApi +'products/category/'+ keyword);
+  }
+
+  
 }

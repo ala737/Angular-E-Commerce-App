@@ -10,6 +10,7 @@ export class AllProductsComponent {
 
   products:any[] = [];
   categories:any[] =[];
+  loading : boolean = false
   constructor (private service:ProductsService){ }
 
   ngOnInit():void{
@@ -18,9 +19,12 @@ export class AllProductsComponent {
   }
 
   getProducts(){
+    this.loading = true
     return this.service.getAllProducts().subscribe((res:any) =>{
        this.products = res;
+       this.loading = false
     }, error => {
+      this.loading = false
       alert(error)
     })
   }
@@ -28,9 +32,12 @@ export class AllProductsComponent {
 
 
   getCategories(){
+    this.loading = true
     return this.service.getcategoriesService().subscribe((res:any) => {
        this.categories = res;
+       this.loading = false
     }, error => {
+      this.loading = false
       alert(error)
     })
   }
@@ -43,9 +50,11 @@ export class AllProductsComponent {
 
   getProductsCategory(keyword:String){
     
+    this.loading = true
       this.products  = this.products
     
     this.service.getProductsByCategory(keyword).subscribe((res:any) =>{
+      this.loading = false
       this.products = res
     })
   

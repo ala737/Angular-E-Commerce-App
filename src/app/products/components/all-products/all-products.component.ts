@@ -19,6 +19,8 @@ export class AllProductsComponent {
   getProducts(){
     return this.service.getAllProducts().subscribe((res:any) =>{
        this.products = res;
+    }, error => {
+      console.log(error.message)
     })
   }
 

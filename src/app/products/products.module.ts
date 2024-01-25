@@ -5,12 +5,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common'
 import { SpinnerComponent } from '../shared/components/spinner/spinner.component';
+import { SelectComponent } from '../shared/components/select/select.component';
+import { ItemComponent } from './components/item/item.component';
 
 @NgModule({
   declarations: [
     AllProductsComponent,
     ProductsDetailsComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    SelectComponent,
+    ItemComponent
   ],
   imports: [
     CommonModule,

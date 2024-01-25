@@ -6,13 +6,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { AllProductsComponent } from '../products/components/all-products/all-products.component';
+import { SelectComponent } from './components/select/select.component';
 
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
-   
   ],
   imports: [
     CommonModule,

@@ -10,8 +10,10 @@ export class ItemComponent {
  @Input() products:any = {}
  @Output() product = new EventEmitter()
 
+ addButton:boolean = false
+ amount:number = 0
  add(){
-  this.product.emit(this.products)
+  this.product.emit({product : this.products,quantity:this.amount})
  }
 
 }

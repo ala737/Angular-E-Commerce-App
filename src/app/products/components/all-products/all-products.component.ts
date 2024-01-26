@@ -63,7 +63,7 @@ export class AllProductsComponent {
     addToCart(event : any){
       if ("cart" in localStorage){
         this.cartproducts = JSON.parse(localStorage.getItem("cart")!)
-        let exist  = this.cartproducts.find(item => item.id == event.id)
+        let exist  = this.cartproducts.find(item => item.product.id == event.product.id)
         if(exist){
           alert("product already exist!")
         }else{

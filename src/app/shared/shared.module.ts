@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { AllProductsComponent } from '../products/components/all-products/all-products.component';
 import { SelectComponent } from './components/select/select.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -18,7 +19,7 @@ import { SelectComponent } from './components/select/select.component';
     CommonModule,
     RouterModule,
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   exports: [
     HeaderComponent,

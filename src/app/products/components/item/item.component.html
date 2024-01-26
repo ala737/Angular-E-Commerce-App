@@ -6,7 +6,11 @@
         <p>{{products.description}}</p>
     </div>
     <div class="px-3 mb-2 d-flex justify-content-between align-item-center">
-       <button class="btn btn-success" (click)="add()">Add To Cart</button>
+       <button class="btn btn-success" *ngIf="!addButton" (click) ="addButton = true">Add To Cart</button>
+       <div class="d-flex  w-50" *ngIf="addButton">
+        <input type="number" class="form-control">
+        <button class="btn btn-danger"  (click)="add()" [(ngModel)]="amount">Add</button>
+       </div>
        <span>{{products.price}} D.T</span>
     </div>
 </div>

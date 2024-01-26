@@ -8,7 +8,7 @@
    
     <div class="row" *ngIf="!loading">
         <div class="col-md-3 col-sm-12" *ngFor="let product of products">
-           <app-item [products]="product"></app-item>
+           <app-item [products]="product" (product)="addToCart($event)"></app-item>
         </div>
     </div>
 

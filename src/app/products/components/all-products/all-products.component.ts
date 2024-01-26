@@ -11,6 +11,7 @@ export class AllProductsComponent {
   products:any[] = [];
   categories:any[] =[];
   loading : boolean = false
+  cartproducts:any[] = []
   constructor (private service:ProductsService){ }
 
   ngOnInit():void{
@@ -56,7 +57,27 @@ export class AllProductsComponent {
     this.service.getProductsByCategory(keyword).subscribe((res:any) =>{
       this.loading = false
       this.products = res
-    })
-  
+    });
+   }
+
+    addToCart(event : any){
+      if ("cart" in localStorage){
+        this.cartproducts = JSON.parse(localStorage.getItem("cart")!)
+        let exist  = this.cartproducts.find(item => item.id == event.id)
+        if(exist){
+          alert("product already exist!")
+        }else{
+          this.cartproducts.push(event)
+          localStorage.setItem("cart",JSON.stringify(this.cartproducts))
+        }
+       
+      }else{
+        this.cartproducts.push(event)
+        localStorage.setItem("cart",JSON.stringify(this.cartproducts))
+      }
+      
+    }
+
 }
-}
+
+
